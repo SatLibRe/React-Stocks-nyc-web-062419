@@ -1,21 +1,24 @@
 import React from 'react'
 
-const Stock = () => (
+class Stock extends React.Component {
+  render(){
+return(
   <div>
 
     <div className="card">
-      <div className="card-body">
+      <div className="card-body" onClick={() => this.props.clickHandler(this.props.stockInfo)}>
         <h5 className="card-title">{
-            //Company Name
+            this.props.stockInfo.name
           }</h5>
-        <p className="card-text">{
-            //ticker: stock price
-          }</p>
+        <p className="card-text" >
+            {this.props.stockInfo.price}
+        </p>
       </div>
     </div>
 
 
-  </div>
-);
+  </div>)
+  }
+}
 
 export default Stock
